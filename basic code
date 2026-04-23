@@ -1,0 +1,36 @@
+create database student;
+use student;
+create table info(
+student_id int primary key auto_increment,
+name varchar(50) not null,
+email varchar(50) ,
+city varchar(30) not null,
+age int not null
+);
+insert into info
+values
+(1, "anita","anita@gmail.com","mumbai",20),
+(2,"Rahul","rahul@gmail.com","mohali",24),
+(3, "anish","anish@gmail.com","madras",21),
+(4,"Rohan","rohan@gmail.com","motihari",23),
+(5,"harsh","harsh@gmail.com","bettiah",23);
+select * from info;
+Select * from info
+order by age;
+insert into info
+values
+(6, "ansh","ansh@gmail.com","mumbai",19),
+(7,"Ram","ram@gmail.com","mohali",26),
+(8, "hero","hero@gmail.com","madras",28);
+
+SELECT city, COUNT(*) AS total_people
+FROM info
+GROUP BY city;
+
+
+SELECT city,
+SUM(age) AS total_age
+FROM info
+GROUP BY city;
+
+
